@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-21T23:19:01.383Z",
+    "end": "2024-11-21T23:19:11.977Z",
+    "duration": 10594,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5051a9de-fdc5-4865-b492-f729425089b5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Prova2_cypress.cy.js",
+      "file": "cypress\\e2e\\Prova2_cypress.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6792f18b-b3f2-4d0e-8022-dc2aa8cf7bff",
+          "title": "Testando o Cadastro de Computadores",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve cadastrar um computador com sucesso",
+              "fullTitle": "Testando o Cadastro de Computadores Deve cadastrar um computador com sucesso",
+              "timedOut": null,
+              "duration": 2444,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Colocar_Dado_Computador();\ncy.get('.primary').click();\ncy.get('.alert-message').invoke('text').then(text => {\n  const normalizedText = text.replace(/\\s+/g, ' ').trim();\n  expect(normalizedText).to.include(`Done ! Computer Peraphone has been created`);\n});",
+              "err": {},
+              "uuid": "40bba960-3989-457a-9cf2-bed9b8cf1dd1",
+              "parentUUID": "6792f18b-b3f2-4d0e-8022-dc2aa8cf7bff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cadastrar um computador sem nome ",
+              "fullTitle": "Testando o Cadastro de Computadores Cadastrar um computador sem nome ",
+              "timedOut": null,
+              "duration": 2026,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Colocar_Dado_Computador();\ncy.get('#name').clear();\ncy.get('.primary').click();\ncy.get('.error').should('contain.text', 'Computer name');",
+              "err": {},
+              "uuid": "0489a952-27d8-4a47-962a-a9ddc2612ebd",
+              "parentUUID": "6792f18b-b3f2-4d0e-8022-dc2aa8cf7bff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cadastrar um computador com datas inválidas ",
+              "fullTitle": "Testando o Cadastro de Computadores Cadastrar um computador com datas inválidas ",
+              "timedOut": null,
+              "duration": 2179,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Colocar_Dado_Computador();\ncy.get('#discontinued').clear();\ncy.get('#discontinued').type('2023-01-01');\ncy.get('.primary').click();\ncy.get('.error').should('contain.text', 'Discontinued date');",
+              "err": {},
+              "uuid": "7e39c744-a8eb-4753-b8c0-5fd2389c9549",
+              "parentUUID": "6792f18b-b3f2-4d0e-8022-dc2aa8cf7bff",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editar um computador existente ",
+              "fullTitle": "Testando o Cadastro de Computadores Editar um computador existente ",
+              "timedOut": null,
+              "duration": 1919,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://computer-database.gatling.io/computers');\ncy.get('tbody > :nth-child(1) > :nth-child(1) > a').click();\ncy.get('#name').clear();\ncy.get('#name').type(\"ACER\");\ncy.get('#introduced').type('2001-01-01');\ncy.get('#discontinued').type('2030-03-03');\ncy.get('.primary').click();\ncy.get('.alert-message').invoke('text').then(text => {\n  const normalizedText = text.replace(/\\s+/g, ' ').trim();\n  expect(normalizedText).to.include(`Done ! Computer ACER has been updated`);\n});",
+              "err": {},
+              "uuid": "d628fb6e-f423-44ba-a54c-30480a5c930a",
+              "parentUUID": "6792f18b-b3f2-4d0e-8022-dc2aa8cf7bff",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "40bba960-3989-457a-9cf2-bed9b8cf1dd1",
+            "0489a952-27d8-4a47-962a-a9ddc2612ebd",
+            "7e39c744-a8eb-4753-b8c0-5fd2389c9549",
+            "d628fb6e-f423-44ba-a54c-30480a5c930a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8568,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
